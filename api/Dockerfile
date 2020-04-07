@@ -1,4 +1,4 @@
-FROM ruby:2.7.0
+FROM ruby:2.6.5
 
 WORKDIR /app
 COPY Gemfile /app
@@ -6,4 +6,4 @@ COPY Gemfile.lock /app
 COPY . /app
 
 RUN apt-get update -qq && apt-get install -y build-essential nodejs libpq-dev postgresql-client
-RUN gem update bundler && bundle install --path vendor/bundle
+RUN gem update bundler && bundle config set path 'vendor/bundle' && bundle install

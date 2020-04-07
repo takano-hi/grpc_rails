@@ -1,4 +1,3 @@
-# require "grpc"
 require "user_services_pb"
 
 class Server < UserServices::Service
